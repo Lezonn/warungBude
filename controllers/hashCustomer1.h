@@ -1,3 +1,5 @@
+// function menu 3-5
+
 void insertCustomer(char *str) {
 	int index = DJB2(str);
 	if(headCustomer[index]) { // cek apakah dia sudah terisi

@@ -1,5 +1,3 @@
-#define MAX_ELEMENT 4
-
 const char* detectOS() {
 #ifdef _WIN32
     return "Windows 32-bit";

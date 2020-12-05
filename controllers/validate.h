@@ -1,4 +1,4 @@
-bool validateName(const char *name) {
+bool validateName(const char *name) { // validate nama dish
     for(int i = 0; name[i] != '\0'; i++) {
         if((name[i] < 'a' || name[i] > 'z') && name[i] != ' '){
             return true;
@@ -7,21 +7,21 @@ bool validateName(const char *name) {
     return false;
 }
 
-bool validatePrice(int price) {
+bool validatePrice(int price) { // validate price dish
     if(price < 1000 || price > 50000) {
         return true;
     }
     return false;
 }
 
-bool validateQty(int qty) {
+bool validateQty(int qty) { // validate quantity dish
     if(qty < 1 || qty > 999) {
         return true;
     }
     return false;
 }
 
-bool validateDish(char *name) {
+bool validateDish(char *name) { // validate nama dish yang akan di delete
     currDish = headDish;
     while(currDish) {
         if(!strcmp(name, currDish->name)) {
@@ -33,14 +33,14 @@ bool validateDish(char *name) {
     return true;
 }
 
-bool validateCustomer(char *name) {
+bool validateCustomer(char *name) { // validate nama customer untuk di search
     for(int i = 0; name[i] != '\0'; i++) {
         if(name[i] == ' ' || name[i] < 'A' || (name[i] > 'Z' && name[i] < 'a') || name[i] > 'z') return true;
     }
     return false;
 }
 
-bool validateOrder(char *name, int qty) {
+bool validateOrder(char *name, int qty) { // validate orderan pada menu 6
     currDish = headDish;
     while(currDish) {
         if(!strcmp(name, currDish->name)) {
@@ -53,14 +53,14 @@ bool validateOrder(char *name, int qty) {
     return true;
 }
 
-bool validateIdx(int idx) {
+bool validateIdx(int idx) { // validate input index di menu 7
     for(int i = 0; i < 26; i++) {
         if(headCustomer[idx]) return false;
     }
     return true;
 }
 
-bool validatePayment(char *name, int idx) {
+bool validatePayment(char *name, int idx) { // validate payment dan melakukan proses pada menu 7
     currCustomer = headCustomer[idx];
     while(currCustomer) {
         if(!strcmp(currCustomer->name, name)) {

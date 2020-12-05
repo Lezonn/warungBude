@@ -1,3 +1,5 @@
+// function untuk bagian dish
+
 void pushDish(char *name, int qty, int price) {
     Dish *temp = createDish(name, qty, price);
     if(!headDish) {

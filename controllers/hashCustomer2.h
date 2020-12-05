@@ -1,4 +1,6 @@
-void pushOrderCustomer(char *name, int qty) {
+// function menu 6-7
+
+void pushOrderCustomer(char *name, int qty) { // membuat linked list orderan customer
     currDish = headDish;
     while(currDish) {
         if(!strcmp(currDish->name, name)) {
@@ -42,7 +44,7 @@ void popCustomerTail(char *name) {
     }
 }
 
-void popCustomer(char *name) {
+void popCustomer(char *name) { // menghapus customer yang telah melakukan payment
     int idx = DJB2(name);
     if(!strcmp(name, currCustomer->name)) {
         if(!headCustomer[idx]){
